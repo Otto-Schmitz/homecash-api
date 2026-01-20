@@ -47,6 +47,9 @@ public class User {
     @Column(name = "birth_date")
     private LocalDateTime birthDate;
 
+    @Column(name = "password")
+    private String password;
+
     @NotNull
     @Column(nullable = false)
     @Builder.Default

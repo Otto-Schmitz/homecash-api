@@ -10,16 +10,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
 
     private final UserService userService;
 
-    @PostMapping("/register")
-    public ResponseEntity<CreateUserResponse> register(@Valid @RequestBody CreateUserRequest request) {
-        CreateUserResponse response = userService.register(request);
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
-    }
+    // User management endpoints (admin/internal use)
+    // Auth endpoints are in AuthController
 }
 
